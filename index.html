@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas NANO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  function unlockAccess() {
+    const password = document.getElementById('access-password').value;
+    const correctPassword = "SPFC"; // 🔐 Altere aqui a senha
+
+    if (password === correctPassword) {
+      document.getElementById('access-lock').style.display = 'none';
+      document.getElementById('access-content').style.display = 'block';
+    } else {
+      alert("Senha incorreta!");
+    }
+  }
+</script>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="#" class="navbar-brand">
+        <img src="https://github.com/dev-brunoliveira/Tarefas/blob/main/WhatsApp_Image_2025-04-04_at_17.39.37__1_-removebg-preview-removebg-preview.png?raw=true" alt="logo_sistema_nano">
+      </a>
+      <div class="navbar-actions">
+        <div class="navbar-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="Anotações.html">Anotações</a>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span id="themeText">Modo Claro</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="section">
+      <h2>📦 Downloads</h2>
+      <div class="download-list">
+        <div class="download-item">
+          <strong>NANO</strong>
+          <a href="#" onclick="verificarSenha('https://drive.google.com/file/d/1toR8UQHSLEzGzU0MUiEDLIpZvIlQaHUA/view?usp=sharing')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Programas (SQL Server e SSMS 2005)</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/s/ty5ji3b5rl5o1ns/Programas.rar?dl=1')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Programas (SQL 2022)</strong>
+          <a href="#" onclick="verificarSenha('https://go.microsoft.com/fwlink/p/?linkid=2215158&clcid=0x416&culture=pt-br&country=br')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>AnyDesk</strong>
+          <a href="#" onclick="verificarSenha('https://anydesk.com/pt/downloads')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Crystal Reports</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/s/f0iq5hsk6thyrtz/CRRuntime_32bit_13_0_18.msi?dl=1')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Nano Commerce Terminal</strong>
+          <a href="#" onclick="verificarSenha('https://drive.google.com/file/d/1toR8UQHSLEzGzU0MUiEDLIpZvIlQaHUA/view?usp=sharing')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Nano NF-e</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/scl/fi/jx6wtayldylqr8ohsivtn/NANONFe.zip?rlkey=zuw9ez6y2vd35r4w8ff7q85xd&st=gmvzbfbs&dl=1')">Download</a>
+        </div>
+        <div class="download-item">
+          <strong>Nano NFS-e</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/scl/fi/mdum3n7qt6lohc9tkztps/NANONFSe.zip?rlkey=c5cgfxb2e5llpeamtjaqbk044&dl=1')">Download</a>
+        </div>
+		<div class="download-item">
+          <strong>Nano Automotivo Antigo</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/scl/fi/01dl18aio4yztvgx8pcvg/TerminalAutomotivo.zip?rlkey=h0c4bggo7eszycgfcqvegezt9&st=67zn5c19&dl=1')">Download</a>
+        </div>
+		<div class="download-item">
+          <strong>Nano NFC-E</strong>
+          <a href="#" onclick="verificarSenha('https://www.dropbox.com/scl/fi/y7a8h0b7sgi45fdk4xh3b/NANONFCe.zip?rlkey=83eha8rhmoq2m3gyoqa1u1hh8&st=go5yuzh3&dl=0')">Download</a>
+        </div>
+      </div>
+    </section>
+
+        <section class="section" id="access-section">
+  <h2>🔑 Acessos/Logins</h2>
+
+  <div id="access-lock">
+    <div class="lock-overlay">
+      <p>🔒 Área protegida</p>
+      <input type="password" id="access-password" placeholder="Digite a senha">
+      <button onclick="unlockAccess()">Desbloquear</button>
+    </div>
+  </div>
+
+  <div class="access-list" id="access-content" style="display: none;">
+    <div class="access-item">
+      <dt>SQL Local</dt>
+      <dd>Usuário: sa<br>Senha: ed3223<br>Porta: 1433</dd>
+    </div>
+    <div class="access-item">
+      <dt>SQL Nuvem</dt>
+      <dd>Servidores: nanocloud.app.br / nanocloud2.app.br<br>Usuário: nano<br>Senha: ed3223</dd>
+    </div>
+    <div class="access-item">
+      <dt>Nano - ADM</dt>
+      <dd>Login: ADM<br>Senha: SPFC<br>Registro: SPFC4*5*6*7*</dd>
+    </div>
+    <div class="access-item">
+      <dt>Habilitar .NET 2.0, 3.0 e 3.5</dt>
+      <p>Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3</p>
+    </div>
+  </div>
+</section>
+
+  </div>
+
+  <script>
+    function verificarSenha(link) {
+      const senha = prompt("Digite a senha para baixar o arquivo:");
+      if (senha === "SPFC") {
+        window.open(link, '_blank');
+      } else if (senha !== null) {
+        alert("Senha incorreta!");
+      }
+    }
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeText = document.getElementById('themeText');
+    const body = document.body;
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      body.classList.add('dark-mode');
+      themeText.textContent = 'Modo Escuro';
+    } else {
+      themeText.textContent = 'Modo Claro';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+
+      if (isDark) {
+        themeText.textContent = 'Modo Escuro';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeText.textContent = 'Modo Claro';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Desbloquear acessos
+    const unlockButton = document.getElementById('unlockButton');
+    const accessWrapper = document.getElementById('accessWrapper');
+
+    unlockButton.addEventListener('click', () => {
+      accessWrapper.classList.remove('blurred');
+    });
+  </script>
+</body>
+</html>
